@@ -37,22 +37,20 @@ Located under `/static/` and rendered via the `/visuals` route:
 ### Project Structure
 
 founder-fit-dashboard/
-├── app.py
-├── FounderFitEvaluation.db
-├── templates/
-│ ├── index.html
-│ ├── founders.html
-│ └── ...
-├── static/
-│ ├── visuals_plot1.png
-│ └── style.css
-├── E-R Diagram.pdf # optional
-├── Relational Schema.pdf # optional
-├── README.md
-
-yaml
-Copy
-Edit
+├── app.py                      # Main Flask application logic and route definitions
+├── FounderFitEvaluation.db     # SQLite database with founders, startups, evaluations
+├── templates/                  # Jinja2 HTML templates for rendering views
+│   ├── index.html
+│   ├── founders.html
+│   ├── startups.html
+│   ├── evaluations.html
+│   └── visuals.html
+├── static/                     # Static files including saved plots
+│   ├── visuals_plot1.png
+│   └── style.css               # (Optional) Custom styling
+├── E-R Diagram.pdf             # Entity-Relationship diagram of the database (optional)
+├── Relational Schema.pdf       # Detailed table structure (optional)
+└── README.md                   # Project overview and instructions
 
 ---
 
