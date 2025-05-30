@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head><title>Add Evaluation</title></head>
+<body>
+<h1>Add Evaluation</h1>
+<form method="post">
+    Startup:
+    <select name="startup_id">
+        {% for startup in startups %}
+            <option value="{{ startup['startup_id'] }}">{{ startup['name'] }}</option>
+        {% endfor %}
+    </select><br>
+    Investor ID: <input type="number" name="investor_id"><br>
+    Fit Score: <input type="number" name="fit_score" step="0.1"><br>
+    Notes:<br>
+    <textarea name="notes" rows="4" cols="50"></textarea><br>
+    <input type="submit" value="Add Evaluation">
+</form>
+<a href="/evaluations">Back to Evaluations</a>
+</body>
+</html>

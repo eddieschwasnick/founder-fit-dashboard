@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head><title>Edit Founder</title></head>
+<body>
+<h1>Edit Founder</h1>
+<form method="post">
+    Name: <input type="text" name="name" value="{{ founder['name'] }}"><br>
+    Education: <input type="text" name="education" value="{{ founder['education'] }}"><br>
+    Years of Experience: <input type="number" name="experience_years" value="{{ founder['experience_years'] }}"><br>
+    Previous Startups: <input type="number" name="prev_startups" value="{{ founder['prev_startups'] }}"><br>
+    Domain Expertise: <input type="text" name="domain_expertise" value="{{ founder['domain_expertise'] }}"><br>
+    <input type="submit" value="Update">
+</form>
+<a href="/founders">Back to Founders</a>
+</body>
+</html>

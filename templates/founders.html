@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>All Founders</title>
+</head>
+<body>
+    <h1>Founder Directory</h1>
+
+    <a href="/add_founder">➕ Add New Founder</a><br><br>
+
+    {% if founders %}
+        <table border="1">
+            <thead>
+                <tr>
+                    {% for key in founders[0].keys() %}
+                        <th>{{ key }}</th>
+                    {% endfor %}
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for founder in founders %}
+                    <tr>
+                        {% for value in founder %}
+                            <td>{{ value }}</td>
+                        {% endfor %}
+                        <td><a href="/edit_founder/{{ founder['founder_id'] }}">Edit</a></td>
+                        <td><a href="/delete_founder/{{ founder['founder_id'] }}" onclick="return confirm('Delete this founder?');">Delete</a></td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>No founders found.</p>
+    {% endif %}
+
+    <br>
+    <a href="/">Back to Home</a>
+</body>
+</html>

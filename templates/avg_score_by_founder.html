@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head><title>Average Score by Founder</title></head>
+<body>
+<h1>Average Fit Score by Founder</h1>
+<table border="1">
+    <thead>
+        <tr><th>Founder</th><th>Avg Score</th></tr>
+    </thead>
+    <tbody>
+        {% for row in results %}
+            <tr><td>{{ row["founder_name"] }}</td><td>{{ row["avg_score"] }}</td></tr>
+        {% endfor %}
+    </tbody>
+</table>
+<br><a href="/">Back to Home</a>
+</body>
+</html>

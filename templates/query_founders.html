@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head><title>Query Founders</title></head>
+<body>
+<h1>Search Founders by Domain Expertise</h1>
+<form method="post">
+    Domain Contains: <input type="text" name="domain">
+    <input type="submit" value="Search">
+</form>
+
+{% if results %}
+    <h2>Results:</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                {% for col in results[0].keys() %}
+                    <th>{{ col }}</th>
+                {% endfor %}
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in results %}
+                <tr>
+                    {% for val in row %}
+                        <td>{{ val }}</td>
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endif %}
+
+<br><a href="/">Back to Home</a>
+</body>
+</html>

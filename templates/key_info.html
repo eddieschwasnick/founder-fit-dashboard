@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Key Information Summary</title>
+</head>
+<body>
+    <h1>Key Information: Evaluations Overview</h1>
+
+    {% if results %}
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Founder Name</th>
+                    <th>Startup Name</th>
+                    <th>Fit Score</th>
+                    <th>Comments</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in results %}
+                    <tr>
+                        <td>{{ row["founder_name"] }}</td>
+                        <td>{{ row["startup_name"] }}</td>
+                        <td>{{ row["fit_score"] }}</td>
+                        <td>{{ row["notes"] }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>No evaluation data available.</p>
+    {% endif %}
+
+    <br><a href="/">Back to Home</a>
+</body>
+</html>

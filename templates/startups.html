@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>All Startups</title>
+</head>
+<body>
+    <h1>Startup Directory</h1>
+
+    <a href="/add_startup">➕ Add New Startup</a><br><br>
+
+    {% if startups %}
+        <table border="1">
+            <thead>
+                <tr>
+                    {% for key in startups[0].keys() %}
+                        <th>{{ key }}</th>
+                    {% endfor %}
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for startup in startups %}
+                    <tr>
+                        {% for value in startup %}
+                            <td>{{ value }}</td>
+                        {% endfor %}
+                        <td><a href="/edit_startup/{{ startup['startup_id'] }}">Edit</a></td>
+                        <td><a href="/delete_startup/{{ startup['startup_id'] }}" onclick="return confirm('Delete this startup?');">Delete</a></td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>No startups found.</p>
+    {% endif %}
+
+    <br>
+    <a href="/">Back to Home</a>
+</body>
+</html>

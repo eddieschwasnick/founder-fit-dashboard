@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head><title>Edit Startup</title></head>
+<body>
+<h1>Edit Startup</h1>
+<form method="post">
+    Name: <input type="text" name="name" value="{{ startup['name'] }}"><br>
+    Sector: <input type="text" name="sector" value="{{ startup['sector'] }}"><br>
+    Team Size: <input type="number" name="team_size" value="{{ startup['team_size'] }}"><br>
+    Funding Ask ($): <input type="number" step="0.01" name="funding_ask" value="{{ startup['funding_ask'] }}"><br>
+    Founder:
+    <select name="founder_id">
+        {% for founder in founders %}
+            <option value="{{ founder['founder_id'] }}"
+                {% if founder['founder_id'] == startup['founder_id'] %}selected{% endif %}>
+                {{ founder['name'] }}
+            </option>
+        {% endfor %}
+    </select><br>
+    <input type="submit" value="Update">
+</form>
+<a href="/startups">Back to Startups</a>
+</body>
+</html>

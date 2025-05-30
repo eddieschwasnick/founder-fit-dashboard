@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Evaluation Statistics</title>
+</head>
+<body>
+    <h1>Evaluation Statistics</h1>
+
+    <ul>
+        {% for key, value in stats.items() %}
+            <li><strong>{{ key }}:</strong> {{ value }}</li>
+        {% endfor %}
+    </ul>
+
+    <br><a href="/">Back to Home</a>
+</body>
+</html>

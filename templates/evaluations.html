@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>All Evaluations</title>
+</head>
+<body>
+    <h1>Startup Evaluations</h1>
+
+    <a href="/add_evaluation">➕ Add New Evaluation</a><br><br>
+
+    {% if evaluations %}
+        <table border="1">
+            <thead>
+                <tr>
+                    {% for key in evaluations[0].keys() %}
+                        <th>{{ key }}</th>
+                    {% endfor %}
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for evaluation in evaluations %}
+                    <tr>
+                        {% for value in evaluation %}
+                            <td>{{ value }}</td>
+                        {% endfor %}
+                        <td><a href="/edit_evaluation/{{ evaluation['eval_id'] }}">Edit</a></td>
+                        <td><a href="/delete_evaluation/{{ evaluation['eval_id'] }}" onclick="return confirm('Delete this evaluation?');">Delete</a></td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>No evaluations found.</p>
+    {% endif %}
+
+    <br>
+    <a href="/">Back to Home</a>
+</body>
+</html>
