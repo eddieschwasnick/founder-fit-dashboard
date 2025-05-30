@@ -39,13 +39,8 @@ Located under `/static/` and rendered via the `/visuals` route:
 founder-fit-dashboard/
 ─ **app.py                      # Main Flask application logic and route definitions
 - **FounderFitEvaluation.db     # SQLite database with founders, startups, evaluations
-- **templates/                  # Jinja2 HTML templates for rendering views
-  ─ index.html
-  ─ founders.html
-  ─ startups.html
-  ─ evaluations.html
-  ─ visuals.html
-─ **static/                     # Static files including saved plots
+- **templates/                  # HTML templates for rendering views
+- **static/                     # Static files including saved plots
 
 ---
 
